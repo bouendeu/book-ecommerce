@@ -24,7 +24,7 @@ public class Book {
     private Date publicationDate;
     private Integer nbOfPages;
 
-    @Column(name = "image_url")
+    @Column(name = "imageurl")
     private String imageUrl;
 
     public Long getId() {
