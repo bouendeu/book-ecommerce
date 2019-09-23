@@ -1,0 +1,6 @@
+com\itbcafrica\Book.class
+com\itbcafrica\repository\TextUtil.class
+com\itbcafrica\rest\BookEndPoint.class
+com\itbcafrica\repository\BookRepository.class
+com\itbcafrica\Language.class
+com\itbcafrica\rest\JAXRSConfiguration.class

@@ -1,6 +1,10 @@
 package com.itbcafrica;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
+import javax.validation.constraints.Size;
 import java.util.Date;
 
 /**
@@ -13,21 +17,47 @@ public class Book {
     private Long id;
 
     @Column(length = 200)
+    @NotNull
+    @Size(min = 1,max = 200)
     private String title;
 
+    @Size(min = 1,max = 10000)
     @Column(length = 1000)
     private  String description;
 
+    @Min(1)
+    @Column(name = "unit_cost")
     private Float unitCost;
+    @NotNull
+    @Size(min = 1,max = 50)
     private String isbn;
+
+    @Column(name = "publication_date")
     @Temporal(TemporalType.DATE)
+    @Past
     private Date publicationDate;
+
+    @Column(name = "nb_of_pages")
     private Integer nbOfPages;
 
-    @Column(name = "imageurl")
+    @Enumerated
+    private Language language;
+
+    @Column(name = "image_url")
     private String imageUrl;
 
-    public Long getId() {
+    public Book(String title, String description, Float unitCost, String isbn, Date publicationDate, Integer nbOfPages, Language language, String imageUrl) {
+        this.title = title;
+        this.description = description;
+        this.unitCost = unitCost;
+        this.isbn = isbn;
+        this.publicationDate = publicationDate;
+        this.nbOfPages = nbOfPages;
+        this.language = language;
+        this.imageUrl = imageUrl;
+    }
+
+        public Long getId() {
         return id;
     }
 
@@ -49,6 +79,9 @@ public class Book {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Book() {
     }
 
     public Float getUnitCost() {
@@ -83,6 +116,14 @@ public class Book {
         this.nbOfPages = nbOfPages;
     }
 
+    public Language getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(Language language) {
+        this.language = language;
+    }
+
     public String getImageUrl() {
         return imageUrl;
     }
@@ -90,7 +131,6 @@ public class Book {
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }
-
     @Override
     public String toString() {
         return "Book{" +
@@ -101,7 +141,10 @@ public class Book {
                 ", isbn='" + isbn + '\'' +
                 ", publicationDate=" + publicationDate +
                 ", nbOfPages=" + nbOfPages +
+                ", language=" + language +
                 ", imageUrl='" + imageUrl + '\'' +
                 '}';
     }
+
+
 }

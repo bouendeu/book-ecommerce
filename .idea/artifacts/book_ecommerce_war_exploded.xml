@@ -1,17 +1,14 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="book-ecommerce:war exploded">
-    <output-path>$PROJECT_DIR$/target/book-library-back</output-path>
+    <output-path>$PROJECT_DIR$/target/bookstore-back</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="book-ecommerce" />
         </element>
-        <element id="directory" name="lib">
-          <element id="library" level="project" name="JPA 2.0-JPA 2.0" />
-        </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/target/book-library-back/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/target/bookstore-back/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="book-ecommerce/web/Web" />
     </root>
