@@ -1,7 +1,0 @@
-#surefire_0
-#Mon Sep 23 10:17:03 CEST 2019
-user.dir=C\:\\Users\\OEM\\Downloads\\projects for learning\\book-ecommerce
-arquillian.launch=arquillian-wildfly-remote
-idea.version=14.1.4
-localRepository=C\:\\Users\\OEM\\.m2\\repository
-basedir=C\:\\Users\\OEM\\Downloads\\projects for learning\\book-ecommerce
